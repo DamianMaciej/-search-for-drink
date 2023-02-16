@@ -78,27 +78,42 @@ ul {
 }
 
 li {
+    display: flex;
+    align-items: start;
     padding: 8px 30px;
     border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+li :hover {
+    background-color: rgb(192, 192, 192);
 }
 
 li:last-child {
     border-bottom: 0;
 }
 
-li p {
+.recipe {
     display: none;
+    border: none;
+    outline: none;
+
     font-family: 'Montserrat', sans-serif;
     font-size: 0.9rem;
     color: rgb(66, 66, 66);
+    height: 200px;
+    max-width: 100%;
+}
+
+.recipe :hover {
+    background: #000;
 }
 
 button {
     margin-right: 20px;
     padding: 5px;
+
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     border: 1px solid rgb(185, 185, 185);
     border-radius: 15px;
-    background-color: rgba(0, 0, 0, 0);
 }

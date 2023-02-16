@@ -1,7 +1,7 @@
 const searchInput = document.querySelector(`.search`);
 const li = document.querySelectorAll(`li`);
 const btnInfo = [...document.querySelectorAll(`button`)];
-const textInfo = [...document.querySelectorAll(`p`)];
+const textInfo = [...document.querySelectorAll(`textarea`)];
 
 const searchEngine = e => {
     const text = e.target.value.toLowerCase();
@@ -16,18 +16,16 @@ const searchEngine = e => {
     })
 }
 
-const info = () => {
+// add click event listener for each collection item
+textInfo.forEach((li, index) => {
+    btnInfo[index].addEventListener("click", () => {
 
-    textInfo.forEach((el, index)=> {
-        if (el.style.display === `inline-block` ){
-            el.style.display = `none`;
-        }else {
-            console.log(`działa`)
-            el.style.display = `inline-block`
+        if (li.style.display === `inline-block`) {
+            li.style.display = `none`;
+        } else {
+            li.style.display = `inline-block`
         }
-    })
-}
+    });
+});
 
-searchInput.addEventListener(`keyup`,searchEngine);
-
-btnInfo.forEach((el, index) => {el.addEventListener('click', info)})
+searchInput.addEventListener(`keyup`, searchEngine);
