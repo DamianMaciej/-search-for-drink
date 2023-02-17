@@ -1,7 +1,7 @@
 const searchInput = document.querySelector(`.search`);
 const li = document.querySelectorAll(`li`);
 const btnInfo = [...document.querySelectorAll(`button`)];
-const textInfo = [...document.querySelectorAll(`textarea`)];
+const textInfo = [...document.querySelectorAll(`span`)];
 
 const searchEngine = e => {
     const text = e.target.value.toLowerCase();
