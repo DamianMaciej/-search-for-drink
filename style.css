@@ -73,57 +73,98 @@ h2 {
 
 ul {
     padding-bottom: 30px;
-    font-style: 23px;
+    font-size: 23px;
     list-style: none;
 }
 
 li {
-    display: flex;
-    align-items: start;
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    justify-items: start;
+    grid-template-areas:
+        "header1 header2"
+        "footer footer";
     padding: 8px 30px;
     border-bottom: 1px solid rgb(226, 226, 226);
-}
-
-li :hover {
-    background-color: rgb(192, 192, 192);
 }
 
 li:last-child {
     border-bottom: 0;
 }
 
+.tools {
+    grid-area: "header2";
+}
+
+.tools button {
+    padding: 10px 12px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    font-size: 12px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.tools button:hover {
+    background-color: #ddd;
+}
+
+.edit:hover {
+    color: rgb(255, 136, 0);
+}
+
+.delete:hover {
+    color: rgb(219, 0, 0);
+}
+
 .recipe {
     display: none;
     border: none;
     outline: none;
+    grid-area: "footer";
     padding: 2px 6px;
+    margin: 10px 0px 0px 5px;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.9rem;
     color: rgb(66, 66, 66);
-    width: 100%;
+    min-width: 150px;
     max-width: 100%;
+    cursor: text;
+    background-color: aqua;
 }
 
 .recipe :hover {
     background: #000;
 }
 
-button {
-    margin-right: 20px;
+.drinkName {
+    display: block;
+    grid-area: "header1";
+    margin-right: 10px;
     padding: 5px;
-    /* width: ; */
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     border: 1px solid rgb(185, 185, 185);
     border-radius: 15px;
+    cursor: pointer;
+    /* max-width: 200px; */
+    transition: background-color .3s;
 }
 
-@media only screen and (max-width: 800px) {
-    li {
-        flex-direction: column;
-    }
+.drinkName:hover {
+    background-color: rgb(192, 192, 192);
+}
 
-    .recipe {
-        margin: 10px 0px 0px 5px;
+[contentEditable=true]:empty:before {
+    content: attr(placeholder);
+    opacity: 0.6;
+}
+
+@media only screen and (max-width: 700px) {
+    h2 {
+        font-size: 1.3rem;
     }
 }

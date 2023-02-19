@@ -1,6 +1,6 @@
 const searchInput = document.querySelector(`.search`);
 const li = document.querySelectorAll(`li`);
-const btnInfo = [...document.querySelectorAll(`button`)];
+const btnInfo = [...document.querySelectorAll(`.drinkName`)];
 const textInfo = [...document.querySelectorAll(`span`)];
 
 const searchEngine = e => {
