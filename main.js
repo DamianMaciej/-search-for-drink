@@ -1,4 +1,5 @@
 const searchInput = document.querySelector(`.search`);
+const newDrinkBtn = document.querySelector(`.newDrinkBtn`);
 const li = document.querySelectorAll(`li`);
 const btnInfo = [...document.querySelectorAll(`.drinkName`)];
 const textInfo = [...document.querySelectorAll(`span`)];
@@ -28,4 +29,9 @@ textInfo.forEach((li, index) => {
     });
 });
 
+const newDrink = () => {
+    
+}
+
 searchInput.addEventListener(`keyup`, searchEngine);
+searchInput.addEventListener(`click`, newDrink);
