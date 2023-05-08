@@ -12,23 +12,29 @@
 
 <body>
 
+    <!--  "add new drink" panel  -->
+    <div class="newDrinkPanelWrapper">
+        <div class="newDrinkPanel">
+            <h2>Add new drink</h2>
+            <input type="text" class="newDrinkPanelInput" placeholder="New drink name">
+            <textarea type="text" class="newRecipe" placeholder=
+            "Enter the ingredients, e.g.:
+            - vodka 100ml
+            - raspberry juice 200ml
+            - lime 1/2
+            - crushed ice"></textarea>
+            <div class="newDrinkPanelBtns">
+                <button class="save">Add</button>
+                <button class="cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <!--         end         -->
+
     <div class="wrapper">
         <div class="header">
             <div class="shadow"></div>
             <h1>Drink Menu</h1>
-            
-            <div class="newDrinkPanelBG"></div>
-
-                <div class="newDrinkPanel">
-                    <h2>Add new drink</h2>
-                    <input type="text" class="newDrinkPanelInput" placeholder="New drink name">
-                    <textarea type="text" class="newRecipe" placeholder="Wprowadź składniki..."></textarea>
-                    <div class="newDrinkPanelBtns">
-                        <button class="save">Add</button>
-                        <button class="cancel">Cancel</button>
-                    </div>
-                </div>
-
             <input type="text" class="search" placeholder="wpisz nazwę szukanego drinka">
             <button class="newDrinkBtn">Add new drink</button>
         </div>
@@ -40,32 +46,32 @@
                     <button class="drinkName">Old Fashioned</button>
 
                     <div class="tools">
-                        <button class="edit fas fa-gear"></i></button><button class="delete"><i
-                                class="fas fa-times"></i></button>
+                        <button class="edit fas fa-gear"></button>
+                        <button class="delete fas fa-times"></button>
                     </div>
                     <span class="recipe" role="textbox" contenteditable="true"
-                        placeholder="Wprowadź składniki..."></span>
+                        placeholder="Ingredients list example"></span>
                 </li>
 
                 <li>
                     <button class="drinkName">Tequila sunrise</button>
                     <div class="tools">
-                        <button class="edit fas fa-gear"></i></button><button class="delete"><i
-                                class="fas fa-times"></i></button>
+                        <button class="edit fas fa-gear"></button>
+                        <button class="delete fas fa-times"></button>
                     </div>
                     <span class="recipe" role="textbox" contenteditable="true"
-                        placeholder="Wprowadź składniki..."></span>
+                        placeholder="Ingredients list example"></span>
                 </li>
 
                 <li>
                     <button class="drinkName">Zombie (rum cocktail)</button>
                     <div class="tools">
-                        <button class="edit fas fa-gear"></i></button><button class="delete"><i
-                                class="fas fa-times"></i></button>
+                        <button class="edit fas fa-gear"></button>
+                        <button class="delete fas fa-times"></button>
                     </div>
 
                     <span class="recipe" role="textbox" contenteditable="true"
-                        placeholder="Wprowadź składniki..."></span>
+                        placeholder="Ingredients list example"></span>
                 </li>
 
             </ul>

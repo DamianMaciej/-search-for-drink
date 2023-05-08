@@ -1,8 +1,13 @@
 const searchInput = document.querySelector(`.search`);
 const newDrinkBtn = document.querySelector(`.newDrinkBtn`);
+const addNewDrinkPanel = document.querySelector(`.newDrinkPanelWrapper`);
+const newDrinkPanelInput = document.querySelector(`.newDrinkPanelInput`);
+const closeDrinkPanelBtn = document.querySelector(`.cancel`);
+const ul = document.querySelector(`ul`);
 const li = document.querySelectorAll(`li`);
-const btnInfo = [...document.querySelectorAll(`.drinkName`)];
-const textInfo = [...document.querySelectorAll(`span`)];
+const drinkNameBtn = [...document.querySelectorAll(`.drinkName`)];
+const ingredientsInfo = [...document.querySelectorAll(`span`)];
+const editDrinkBtn = document.querySelector(`.edit`);
 
 const searchEngine = e => {
     const text = e.target.value.toLowerCase();
@@ -18,8 +23,8 @@ const searchEngine = e => {
 }
 
 // add click event listener for each collection item
-textInfo.forEach((li, index) => {
-    btnInfo[index].addEventListener("click", () => {
+ingredientsInfo.forEach((li, index) => {
+    drinkNameBtn[index].addEventListener("click", () => {
 
         if (li.style.display === `inline-block`) {
             li.style.display = `none`;
@@ -29,9 +34,25 @@ textInfo.forEach((li, index) => {
     });
 });
 
-const newDrink = () => {
-    
+const addNewDrink = () => {
+    addNewDrinkPanel.style.display = "block";
+}
+
+const closeDrinkPanel = () => {
+    addNewDrinkPanel.style.display = "none";
+}
+
+const editDrink = (e) => {
+
+    if(e.target.matches(`.edit`)){
+        
+        // addNewDrinkPanel.style.display = "block";  
+    }
+
+  
 }
 
 searchInput.addEventListener(`keyup`, searchEngine);
-searchInput.addEventListener(`click`, newDrink);
+newDrinkBtn.addEventListener(`click`, addNewDrink);
+closeDrinkPanelBtn.addEventListener(`click`, closeDrinkPanel);
+ul.addEventListener(`click`, editDrink);
