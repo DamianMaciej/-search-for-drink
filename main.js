@@ -53,7 +53,6 @@ const editDrink = (e) => {
         //***********  usunąć białe spacje  ***************
         newRecipeTextBox.textContent = e.target.parentElement.nextElementSibling.textContent;
 
-
         addNewDrinkPanel.style.display = "block";
 
     }
