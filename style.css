@@ -15,6 +15,12 @@ body {
     background-color: rgb(233, 233, 233);
 }
 
+
+h1,
+h2{
+    cursor: default;
+}
+
 /* *************** HEADER SECTION *************** */
 
 .wrapper {
@@ -123,7 +129,6 @@ h1 {
     color: #000;
 }
 
-        /* ustawić wielkość textboxa */
 .newRecipe {
     padding: 5px 10px;
     margin-bottom: 20px;
@@ -168,21 +173,18 @@ h2 {
     padding: 30px 0;
 }
 
-ul {
+.drinkUl {
     padding-bottom: 30px;
     font-size: 23px;
     list-style: none;
 }
 
-li {
+.drinkLi {
     display: grid;
     align-items: center;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto;
     justify-items: start;
-    /* grid-template-areas:
-        "header1 header2"
-        "footer footer"; */
     padding: 8px 30px;
     border-bottom: 1px solid rgb(226, 226, 226);
 }
@@ -192,8 +194,7 @@ li:last-child {
 }
 
 .tools {
-    display: flex;
-    /* grid-area: "header2"; */
+    display: inline;
 }
 
 .tools button {
@@ -222,7 +223,6 @@ li:last-child {
     display: none;
     border: none;
     outline: none;
-    /* grid-area: "footer"; */
     padding: 2px 6px;
     margin: 10px 0px 0px 5px;
     font-family: 'Montserrat', sans-serif;
@@ -236,8 +236,7 @@ li:last-child {
 }
 
 .drinkName {
-    display: block;
-    /* grid-area: "header1"; */
+    display: inline;
     margin-right: 10px;
     padding: 5px;
     font-family: 'Montserrat', sans-serif;

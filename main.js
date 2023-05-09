@@ -2,11 +2,12 @@ const searchInput = document.querySelector(`.search`);
 const newDrinkBtn = document.querySelector(`.newDrinkBtn`);
 const addNewDrinkPanel = document.querySelector(`.newDrinkPanelWrapper`);
 const newDrinkPanelInput = document.querySelector(`.newDrinkPanelInput`);
+const newRecipeTextBox = document.querySelector(`.newRecipe`);
 const closeDrinkPanelBtn = document.querySelector(`.cancel`);
-const ul = document.querySelector(`ul`);
-const li = document.querySelectorAll(`li`);
+const ul = document.querySelector(`.drinkUl`);
+const li = document.querySelectorAll(`.drinkLi`);
 const drinkNameBtn = [...document.querySelectorAll(`.drinkName`)];
-const ingredientsInfo = [...document.querySelectorAll(`span`)];
+const ingredientsInfo = [...document.querySelectorAll(`.recipe`)];
 const editDrinkBtn = document.querySelector(`.edit`);
 
 const searchEngine = e => {
@@ -26,10 +27,10 @@ const searchEngine = e => {
 ingredientsInfo.forEach((li, index) => {
     drinkNameBtn[index].addEventListener("click", () => {
 
-        if (li.style.display === `inline-block`) {
+        if (li.style.display === `flex`) {
             li.style.display = `none`;
         } else {
-            li.style.display = `inline-block`
+            li.style.display = `flex`
         }
     });
 });
@@ -40,13 +41,21 @@ const addNewDrink = () => {
 
 const closeDrinkPanel = () => {
     addNewDrinkPanel.style.display = "none";
+    newDrinkPanelInput.value = ``;
 }
 
 const editDrink = (e) => {
 
     if(e.target.matches(`.edit`)){
-        
-        // addNewDrinkPanel.style.display = "block";  
+        //czy da się lepiej to zrobic zamiast 2x parentElement
+        newDrinkPanelInput.value = e.target.parentElement.parentElement.firstChild.textContent;
+
+        //***********  usunąć białe spacje  ***************
+        newRecipeTextBox.textContent = e.target.parentElement.nextElementSibling.textContent;
+
+
+        addNewDrinkPanel.style.display = "block";
+
     }
 
   
